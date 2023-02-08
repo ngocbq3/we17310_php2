@@ -1,22 +1,16 @@
 <?php
 
+use App\Router;
+
 require_once __DIR__ . "/../vendor/autoload.php";
 
-use App\Models\CategoryModel;
+$router = new Router;
 
-$cate = new CategoryModel;
-// var_dump(CategoryModel::all());
-// $data = [
-//     // 'cate_name' => 'Oppo',
-//     'slug' => 'oppo',
-//     'desc' => 'Điện thoại Oppo New'
-// ];
-// // $cate->insert($data);
+Router::get('/', function () {
+    echo "Hello world";
+});
+Router::get('/about', function () {
+    echo "About page";
+});
 
-// $cate->update("19 OR cate_name='Samsung'", $data);
-echo "<pre>";
-var_dump(
-    $cate->where('cate_name', '=', 'Samsung')
-        ->orWhere('desc', '=', 'skirt')
-        ->get()
-);
+$router->resolve();

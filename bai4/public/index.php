@@ -19,6 +19,7 @@ Router::get('/home', [HomeController::class, 'index']);
 Router::get('/contact', [HomeController::class, 'contact']);
 Router::get('/create-product', [ProductController::class, 'create']);
 Router::post('/create-product', [ProductController::class, 'store']);
+Router::get('/product', [ProductController::class, 'index']);
 
 
 $router->resolve();

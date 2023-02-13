@@ -1,6 +1,7 @@
 <?php
 
 use App\Controllers\HomeController;
+use App\Controllers\ProductController;
 use App\Router;
 
 require_once __DIR__ . "/../vendor/autoload.php";
@@ -16,5 +17,8 @@ Router::get('/about', function () {
 
 Router::get('/home', [HomeController::class, 'index']);
 Router::get('/contact', [HomeController::class, 'contact']);
+Router::get('/create-product', [ProductController::class, 'create']);
+Router::post('/create-product', [ProductController::class, 'store']);
+
 
 $router->resolve();

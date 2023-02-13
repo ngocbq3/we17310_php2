@@ -19,6 +19,15 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
-        var_dump($request->getBody());
+        $product = $request->getBody();
+        $product['image'] = $_FILES['image']['name'];
+
+        move_uploaded_file($_FILES['image']['tmp_name'], "images/" . $_FILES['image']['name']);
+
+        $p = new ProductModel();
+        $p->insert($product);
+
+        header("location:/product");
+        die;
     }
 }

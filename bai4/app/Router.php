@@ -37,6 +37,19 @@ class Router
 
         $callback = static::$routes[$method][$path] ?? false;
 
-        $callback();
+        if ($callback === false) {
+            echo "404 FILE NOT FOUND";
+            exit;
+        }
+        //Nếu $callback là 1 function
+        if (is_callable($callback)) {
+            return $callback();
+        }
+        //nếu $callback là 1 array
+        if (is_array($callback)) {
+            $class = new $callback[0];
+            $action = $callback[1];
+            return call_user_func_array([$class, $action], []);
+        }
     }
 }

@@ -26,7 +26,9 @@
                 <td>
                     <img src="images/<?= $product->image ?>" width="120" alt="">
                 </td>
-                <td>Action</td>
+                <td>
+                    <a href="/update-product?id=<?= $product->id ?>">Edit</a>
+                </td>
             </tr>
         <?php endforeach ?>
     </table>

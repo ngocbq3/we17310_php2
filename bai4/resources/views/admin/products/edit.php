@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <form action="/create-product" method="post" enctype="multipart/form-data">
+    <form action="/update-product" method="post" enctype="multipart/form-data">
         <input type="hidden" name="id" value="<?= $product->id ?>">
         Name: <input type="text" name="name" value="<?= $product->name ?>">
         <br>

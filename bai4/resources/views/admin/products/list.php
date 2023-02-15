@@ -28,6 +28,8 @@
                 </td>
                 <td>
                     <a href="/update-product?id=<?= $product->id ?>">Edit</a>
+
+                    <a href="/delete-product?id=<?= $product->id ?>" onclick="return confirm('Bạn có chắc muốn xóa không?')">Delete</a>
                 </td>
             </tr>
         <?php endforeach ?>

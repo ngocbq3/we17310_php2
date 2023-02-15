@@ -22,6 +22,7 @@ Router::post('/create-product', [ProductController::class, 'store']);
 Router::get('/product', [ProductController::class, 'index']);
 Router::get('/update-product', [ProductController::class, 'show']);
 Router::post('/update-product', [ProductController::class, 'update']);
+Router::get('/delete-product', [ProductController::class, 'delete']);
 
 
 $router->resolve();
